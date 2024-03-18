@@ -3,6 +3,15 @@
 
 #include <string>
 
+/**
+ * @brief Classe représentant un contact dans un annuaire téléphonique.
+ * 
+ * Cette classe stocke les informations personnelles d'un contact, telles que
+ * le prénom, le nom, le surnom, le numéro de téléphone et le secret le plus 
+ * sombre. Elle permet de définir et d'afficher ces informations, ainsi que de
+ * formater l'affichage pour une présentation en liste.
+ */
+
 class Contact {
 private:
 	std::string firstName;

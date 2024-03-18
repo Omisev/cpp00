@@ -6,7 +6,7 @@
 #    By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 15:34:02 by raveriss          #+#    #+#              #
-#    Updated: 2024/03/13 15:34:06 by raveriss         ###   ########.fr        #
+#    Updated: 2024/03/18 16:57:08 by raveriss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = Account
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS = -std=c++98 -MMD
+FLAGS = -std=c++98 -g -Wall -Werror -Wextra -MMD
 
 CC = c++
 

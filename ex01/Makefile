@@ -6,7 +6,7 @@
 #    By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 10:38:25 by bvaujour          #+#    #+#              #
-#    Updated: 2024/03/06 16:26:23 by raveriss         ###   ########.fr        #
+#    Updated: 2024/03/18 16:56:47 by raveriss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = phonebook
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS = -std=c++98 -MMD
+FLAGS = -std=c++98 -g -Wall -Werror -Wextra -MMD
 
 CC = c++
 

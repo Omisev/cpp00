@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:39:52 by raveriss          #+#    #+#             */
-/*   Updated: 2024/03/13 15:42:49 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:30:47 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
  * @return La représentation sous forme de chaîne de l'entier.
  */
 std::string intToString(int value) {
-    std::stringstream ss;
-    ss << value;
-    return ss.str();
+    std::stringstream numberInStrFormat;
+    numberInStrFormat << value;
+    return numberInStrFormat.str();
 }
 
 /*

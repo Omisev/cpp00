@@ -1,6 +1,7 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <string>
+#include <cstdlib> // Pour std::atoi
 
 /**
  * Constructeur par défaut pour PhoneBook.
@@ -28,17 +29,35 @@ void PhoneBook::addContact(const Contact &contact) {
  * L'utilisateur est invité à entrer l'indice du contact à visualiser.
  */
 void PhoneBook::searchContact() const {
-	for (int i = 0; i < currentSize; i++) {
-		contacts[i].displayHeader(i + 1);
-	}
-	std::cout << "Enter the index of the contact you want to view: ";
-	int index;
-	std::cin >> index;
-	if (std::cin.fail() || index < 1 || index > currentSize) {
-		std::cout << "Invalid index" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(10000, '\n');
-	} else {
-		contacts[index - 1].displayContact();
-	}
+    for (int i = 0; i < currentSize; i++) {
+        contacts[i].displayHeader(i + 1);
+    }
+    std::cout << "Enter the index of the contact you want to view: ";
+    std::string input;
+    std::cin >> input;
+
+    // Vérification que l'entrée est numérique
+    bool isNumeric = true;
+    for (int i = 0; i < input.length(); i++) {
+        if (!isdigit(input[i])) {
+            isNumeric = false;
+            break;
+        }
+    }
+
+    if (isNumeric) {
+        int index = std::atoi(input.c_str()); // Conversion de la chaîne en entier
+
+        if (index < 1 || index > currentSize) {
+            std::cout << "Invalid index" << std::endl;
+        } else {
+            contacts[index - 1].displayContact();
+        }
+    } else {
+        std::cout << "Invalid index" << std::endl;
+    }
+
+    // Nettoyer le flux d'entrée au cas où l'utilisateur aurait saisi plusieurs valeurs
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
 }
