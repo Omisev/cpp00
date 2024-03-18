@@ -38,7 +38,7 @@ void PhoneBook::searchContact() const {
 
     // Vérification que l'entrée est numérique
     bool isNumeric = true;
-    for (int i = 0; i < input.length(); i++) {
+    for (std::string::size_type i = 0; i < input.length(); i++) {
         if (!isdigit(input[i])) {
             isNumeric = false;
             break;
