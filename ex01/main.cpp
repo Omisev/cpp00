@@ -2,6 +2,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
+#include <limits>
 
 // Fonction pour vérifier si une chaîne contient des chiffres
 bool containsDigit(const std::string& s) {
@@ -35,8 +36,23 @@ int main()
 	std::string command;
 	while (true)
 	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::cin >> command;
+        std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+        std::getline(std::cin, command);
+
+        // Si std::getline échoue à cause de EOF ou d'autres erreurs, réinitialiser std::cin et continuer
+        if (!std::cin) {
+            if (std::cin.eof()) {
+                // Réinitialiser std::cin pour enlever l'état de fail/EOF
+                std::cin.clear();
+                // Pas forcément besoin de std::cin.ignore ici après std::getline
+                std::cout << "\nCTRL+D was pressed. Exiting the program.\n";
+                break; // Ou continue selon le comportement souhaité
+            } else {
+                std::cin.clear();
+                std::cout << "An error occurred while reading your input. Please try again.\n";
+                continue;
+            }
+        }
 		if (command == "ADD")
 		{
 			if (std::cin.eof())
