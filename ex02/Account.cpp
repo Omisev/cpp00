@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:12:38 by raveriss          #+#    #+#             */
-/*   Updated: 2024/03/18 17:01:19 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:32:27 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,8 +194,8 @@ void Account::_displayTimestamp()
 	std::cout
 		<< "["
 		<< (now.tm_year + 1900)
-		<< std::setfill('0')
-		<< std::setw(2) << now.tm_mon + 1
+		<< std::setfill('0')//<--- Définit '0' comme caractère de remplissage.
+		<< std::setw(2) << now.tm_mon + 1//<--- setw(2) Fixe la largeur de champ à 2
 		<< std::setw(2) << now.tm_mday << "_"
 		<< std::setw(2) << now.tm_hour
 		<< std::setw(2) << now.tm_min

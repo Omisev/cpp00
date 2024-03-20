@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:32:07 by raveriss          #+#    #+#             */
-/*   Updated: 2024/03/18 16:31:10 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:36:00 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ int main(int argc, char **argv)
 		std::cout << LOUD_FEEDBACK << std::endl;
 	else
 	{
+	
 		for (int i = FIRST_ARGUMENT_INDEX; i < argc; ++i)
 		{
 			std::string str = toUpperCase(argv[i]);
 			std::cout << str;
 		}
 		std::cout << std::endl;
+		
 	}
 
 	return EXIT_SUCCESS;
